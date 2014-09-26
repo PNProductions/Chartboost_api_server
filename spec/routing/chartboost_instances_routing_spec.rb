@@ -8,6 +8,8 @@ RSpec.describe ChartboostInstancesController, :type => :routing do
     end
 
     it "routes to #create" do
+
+      
       expect(:post => "/chartboost_instances").to route_to("chartboost_instances#create", format: "json")
     end
 

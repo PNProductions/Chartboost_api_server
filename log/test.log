@@ -258,3 +258,332 @@ Started GET "/chartboost_instances" for 127.0.0.1 at 2014-09-26 15:45:13 +0900
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
   [1m[35m (0.1ms)[0m  begin transaction
   [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (10.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (13.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "type"=>"click"}}
+Completed 500 Internal Server Error in 3ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (32.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "type"=>"click"}}
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (21.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (439.3ms)[0m  DROP TABLE "chartboost_instances"
+  [1m[36m (364.1ms)[0m  [1mCREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "type" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (843.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140926180450')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "type"=>"click"}}
+Completed 500 Internal Server Error in 2ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.4ms)[0m  DROP TABLE "chartboost_instances"
+  [1m[36m (1.9ms)[0m  [1mCREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (40.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140926181532')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "my_type"=>"click"}}
+Completed 500 Internal Server Error in 2ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "my_type"=>"click"}}
+Completed 500 Internal Server Error in 1ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "my_type"=>"click"}}
+Completed 500 Internal Server Error in 13ms
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.2ms)[0m  DROP TABLE "chartboost_instances"
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaing_id" integer) [0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140926182121')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "my_type"=>"click"}}
+Completed 500 Internal Server Error in 16ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.6ms)[0m  DROP TABLE "chartboost_instances"
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaign_id" integer) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (2.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140926182336')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "my_type"=>"click"}}
+Completed 500 Internal Server Error in 17ms
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  DROP TABLE "chartboost_instances"
+  [1m[36m (2.3ms)[0m  [1mCREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaign_id" integer, "testAdvertiserGame" text) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140926182500')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (4.7ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "my_type"=>"click"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "chartboost_instances" ("campaign", "campaign_id", "created_at", "from", "macid", "my_type", "testAdvertiserGame", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["campaign", "campaign_created"], ["campaign_id", 44444444444], ["created_at", "2014-09-26 18:25:32.624869"], ["from", "app_from"], ["macid", 666666666666], ["my_type", "click"], ["testAdvertiserGame", "test_adv_game"], ["updated_at", "2014-09-26 18:25:32.624869"], ["uuid", 22222222222]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 75ms (Views: 25.7ms | ActiveRecord: 1.3ms)
+  [1m[36m (0.9ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.6ms)[0m  DROP TABLE "chartboost_instances"
+  [1m[36m (2.1ms)[0m  [1mCREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaign_id" integer, "testAdvertiserGame" text) [0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.9ms)[0m  DROP TABLE "chartboost_instances"
+  [1m[36m (2.2ms)[0m  [1mCREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaign_id" integer) [0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (3.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140926182604')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "my_type"=>"click"}}
+Unpermitted parameters: testAdvertiserGame
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "chartboost_instances" ("campaign", "campaign_id", "created_at", "from", "macid", "my_type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["campaign", "campaign_created"], ["campaign_id", 44444444444], ["created_at", "2014-09-26 18:28:21.361086"], ["from", "app_from"], ["macid", 666666666666], ["my_type", "click"], ["updated_at", "2014-09-26 18:28:21.361086"], ["uuid", 22222222222]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 33ms (Views: 0.7ms | ActiveRecord: 1.7ms)
+  [1m[36m (1.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chartboost_instances"[0m
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "my_type"=>"click"}}
+Unpermitted parameters: testAdvertiserGame
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "chartboost_instances" ("campaign", "campaign_id", "created_at", "from", "macid", "my_type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["campaign", "campaign_created"], ["campaign_id", 44444444444], ["created_at", "2014-09-26 18:29:40.449409"], ["from", "app_from"], ["macid", 666666666666], ["my_type", "click"], ["updated_at", "2014-09-26 18:29:40.449409"], ["uuid", 22222222222]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 22ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chartboost_instances"[0m
+  [1m[35m (0.8ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "my_type"=>"click"}}
+Unpermitted parameters: testAdvertiserGame
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "chartboost_instances" ("campaign", "campaign_id", "created_at", "from", "macid", "my_type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?, ?)  [["campaign", "campaign_created"], ["campaign_id", 44444444444], ["created_at", "2014-09-26 18:32:06.848534"], ["from", "app_from"], ["macid", 666666666666], ["my_type", "click"], ["updated_at", "2014-09-26 18:32:06.848534"], ["uuid", 22222222222]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 23ms (Views: 0.7ms | ActiveRecord: 1.3ms)
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chartboost_instances"[0m
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "testAdvertiserGame"=>"test_adv_game", "my_type"=>"click"}}
+Unpermitted parameters: testAdvertiserGame
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "chartboost_instances" ("campaign", "campaign_id", "created_at", "from", "macid", "my_type", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["campaign", "campaign_created"], ["campaign_id", 44444444444], ["created_at", "2014-09-26 18:32:38.414629"], ["from", "app_from"], ["macid", 666666666666], ["my_type", "click"], ["updated_at", "2014-09-26 18:32:38.414629"], ["uuid", 22222222222]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 21ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chartboost_instances"[0m
+  [1m[35mChartboostInstance Load (0.2ms)[0m  SELECT  "chartboost_instances".* FROM "chartboost_instances"   ORDER BY "chartboost_instances"."id" DESC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chartboost_instances"[0m
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "to"=>"test_adv_game", "my_type"=>"click"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "chartboost_instances" ("campaign", "campaign_id", "created_at", "from", "macid", "my_type", "to", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["campaign", "campaign_created"], ["campaign_id", 44444444444], ["created_at", "2014-09-26 18:32:59.317426"], ["from", "app_from"], ["macid", 666666666666], ["my_type", "click"], ["to", "test_adv_game"], ["updated_at", "2014-09-26 18:32:59.317426"], ["uuid", 22222222222]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 24ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chartboost_instances"[0m
+  [1m[35mChartboostInstance Load (0.2ms)[0m  SELECT  "chartboost_instances".* FROM "chartboost_instances"   ORDER BY "chartboost_instances"."id" DESC LIMIT 1
+  [1m[36m (1.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chartboost_instances"[0m
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "to"=>"test_adv_game", "my_type"=>"click"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "chartboost_instances" ("campaign", "campaign_id", "created_at", "from", "macid", "my_type", "to", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["campaign", "campaign_created"], ["campaign_id", 44444444444], ["created_at", "2014-09-26 18:33:18.340115"], ["from", "app_from"], ["macid", 666666666666], ["my_type", "click"], ["to", "test_adv_game"], ["updated_at", "2014-09-26 18:33:18.340115"], ["uuid", 22222222222]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 21ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chartboost_instances"[0m
+  [1m[35mChartboostInstance Load (0.2ms)[0m  SELECT  "chartboost_instances".* FROM "chartboost_instances"   ORDER BY "chartboost_instances"."id" DESC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chartboost_instances"[0m
+Processing by ChartboostInstancesController#create as HTML
+  Parameters: {"chartboost_instance"=>{"from"=>"app_from", "uuid"=>"22222222222", "campaign"=>"campaign_created", "campaign_id"=>"44444444444", "macid"=>"666666666666", "to"=>"test_adv_game", "my_type"=>"click"}}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "chartboost_instances" ("campaign", "campaign_id", "created_at", "from", "macid", "my_type", "to", "updated_at", "uuid") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["campaign", "campaign_created"], ["campaign_id", 44444444444], ["created_at", "2014-09-26 18:33:42.287220"], ["from", "app_from"], ["macid", 666666666666], ["my_type", "click"], ["to", "test_adv_game"], ["updated_at", "2014-09-26 18:33:42.287220"], ["uuid", 22222222222]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Completed 201 Created in 23ms (Views: 0.6ms | ActiveRecord: 0.9ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "chartboost_instances"[0m
+  [1m[35mChartboostInstance Load (0.2ms)[0m  SELECT  "chartboost_instances".* FROM "chartboost_instances"   ORDER BY "chartboost_instances"."id" DESC LIMIT 1
+  [1m[36m (0.8ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (1.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
