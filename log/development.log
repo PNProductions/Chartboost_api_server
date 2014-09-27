@@ -1,0 +1,120 @@
+  [1m[36m (2.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35m (18.6ms)[0m  select sqlite_version(*)
+  [1m[36m (2.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateChartboostInstances (20140926032946)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140926032946"]]
+  [1m[35m (2.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (18.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColsToChartboostInstance (20140926180450)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (255.8ms)[0m  [1mALTER TABLE "chartboost_instances" ADD "from" text[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "chartboost_instances" ADD "uuid" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "chartboost_instances" ADD "campaign" text[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "chartboost_instances" ADD "testCampaign" varchar(255)
+  [1m[36m (0.4ms)[0m  [1mALTER TABLE "chartboost_instances" ADD "text" varchar(255)[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "chartboost_instances" ADD "macid" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "chartboost_instances" ADD "to" text[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "chartboost_instances" ADD "ifa" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "chartboost_instances" ADD "type" text[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140926180450"]]
+  [1m[36m (758.1ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (7.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RenameType (20140926181121)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140926181121"]]
+  [1m[35m (40.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RenameCol (20140926181532)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (22.8ms)[0m  [1mCREATE TEMPORARY TABLE "achartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "chartboost_instances"
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "chartboost_instances"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "achartboost_instances"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "achartboost_instances"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140926181532"]]
+  [1m[35m (3.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColToChartboostInstance (20140926182121)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "chartboost_instances" ADD "campaing_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140926182121"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RemoveColToChartboostInstance (20140926182213)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (3.1ms)[0m  [1mCREATE TEMPORARY TABLE "achartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaing_id" integer) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "chartboost_instances"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "chartboost_instances"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "achartboost_instances"[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "achartboost_instances"
+  [1m[36m (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "achartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "chartboost_instances"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "chartboost_instances"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "achartboost_instances"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "achartboost_instances"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140926182213"]]
+  [1m[35m (4.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColToChartboostInstance (20140926182336)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "chartboost_instances" ADD "campaign_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140926182336"]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColToChartboostInstance (20140926182500)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "chartboost_instances" ADD "testAdvertiserGame" text[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20140926182500"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColToChartboostInstance (20140926182604)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (1.6ms)[0m  [1mCREATE TEMPORARY TABLE "achartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaign_id" integer, "testAdvertiserGame" text) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "chartboost_instances"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "chartboost_instances"[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaign_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "achartboost_instances"[0m
+  [1m[35m (0.5ms)[0m  DROP TABLE "achartboost_instances"
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "chartboost_instances" ADD "to" text[0m
+SQLite3::SQLException: duplicate column name: to: ALTER TABLE "chartboost_instances" ADD "to" text
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColToChartboostInstance (20140926182604)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.4ms)[0m  [1mCREATE TEMPORARY TABLE "achartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaign_id" integer, "testAdvertiserGame" text) [0m
+  [1m[35m (0.2ms)[0m  SELECT * FROM "chartboost_instances"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "chartboost_instances"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaign_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "achartboost_instances"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "achartboost_instances"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "chartboost_instances" ADD "to" text[0m
+SQLite3::SQLException: duplicate column name: to: ALTER TABLE "chartboost_instances" ADD "to" text
+  [1m[35m (0.7ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddColToChartboostInstance (20140926182604)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.5ms)[0m  [1mCREATE TEMPORARY TABLE "achartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaign_id" integer, "testAdvertiserGame" text) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "chartboost_instances"
+  [1m[36m (0.3ms)[0m  [1mDROP TABLE "chartboost_instances"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "chartboost_instances" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime, "from" text, "uuid" integer, "campaign" text, "testCampaign" varchar(255), "text" varchar(255), "macid" integer, "to" text, "ifa" integer, "my_type" text, "campaign_id" integer) 
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "achartboost_instances"[0m
+  [1m[35m (0.4ms)[0m  DROP TABLE "achartboost_instances"
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20140926182604"]]
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
