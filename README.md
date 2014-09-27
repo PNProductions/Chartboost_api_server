@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/PNProductions/Chartboost_api_server.svg?branch=setup-iniziale)](https://travis-ci.org/PNProductions/Chartboost_api_server)
+
 Chartboost_api_server
 =====================
 
