@@ -4,7 +4,7 @@ RSpec.describe ChartboostInstancesController, type: :controller do
   render_views
 
   let!(:chartboost_instance) do
-    # create(:chartboost_instance, 10)
+    create_list(:chartboost_instance, 10)
   end
 
   describe 'GET show' do
