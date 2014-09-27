@@ -21,7 +21,7 @@ Icon
 *.gem
 *.rbc
 /.config
-/confing/initializers/secret_token.rb
+/config/initializers/secret_token.rb
 /coverage/
 /InstalledFiles
 /pkg/
