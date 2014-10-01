@@ -6,7 +6,10 @@ Chartboost_api_server
 Piccolo server API per la gestione delle callback inviate da chartboost.
 
 ##### Path1: GET uuid/get_info_last_ads_clicked
-Path a cui si deve connettere l’utente, questo url ritorna true o false in base se è passato sufficiente tempo (time.now() - timestamp_get) ed eventuali altre informazioni.
+Fornisce all'utente informazioni sull'ultimo banner cliccato. Se non esite ritorna error
+
+##### Path2: GET uuid/delete
+Elimina il record presente sul db
 
 ##### Path2: /chartboost/setup_clicked_ads
 Chartboost scrive su un url quando un utente installa un’app, lui fa un socket a questo url con le seguenti informazioni:

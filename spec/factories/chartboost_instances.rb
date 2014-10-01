@@ -6,7 +6,7 @@ FactoryGirl.define do
     sequence(:campaign_id)  { |n| "999999999999999#{n}" }
     sequence(:macid)  { |n| "5555555555555#{n}" }
     sequence(:to)  { |n| "test_advertiser_game_#{n}" }
-    sequence(:ifa)  { |n| "8888888888888_#{n}" }
+    sequence(:ifa)  { |n| "8888888888888#{n}" }
     my_type 'click'
   end
 end

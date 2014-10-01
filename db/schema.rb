@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926182604) do
+ActiveRecord::Schema.define(version: 20140930134311) do
 
   create_table "chartboost_instances", force: true do |t|
     t.datetime "created_at"
@@ -19,13 +19,13 @@ ActiveRecord::Schema.define(version: 20140926182604) do
     t.text     "from"
     t.integer  "uuid"
     t.text     "campaign"
-    t.string   "testCampaign"
-    t.string   "text"
     t.integer  "macid"
     t.text     "to"
     t.integer  "ifa"
     t.text     "my_type"
     t.integer  "campaign_id"
   end
+
+  add_index "chartboost_instances", ["uuid"], name: "index_chartboost_instances_on_uuid", unique: true
 
 end

@@ -5,12 +5,9 @@ class ChartboostInstancesController < ApplicationController
 
   def create
     @chartboost_instance = ChartboostInstance.create(chartboost_instance_params)
-
-    if @chartboost_instance.save!
-      render json: @chartboost_instance, status: :created
-    else
-      render json: @chartboost_instance.errors, status: :unprocessable_entity
-    end
+    # Se fallisce il save significa che ho un id duplicato
+    render if @chartboost_instance.save
+    head :bad_request unless @chartboost_instance.update_attributes(uuid: @chartboost_instance.uuid)
   end
 
   private
@@ -18,6 +15,6 @@ class ChartboostInstancesController < ApplicationController
   def chartboost_instance_params
     params.require(:chartboost_instance).permit(
           :from, :uuid, :campaign,
-          :campaign_id, :macid, :to, :my_type)
+          :campaign_id, :macid, :to, :ifa, :my_type)
   end
 end
