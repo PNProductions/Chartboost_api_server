@@ -4,7 +4,7 @@ rvm:
 env:
   - DB=postgresql
 script:
-  - RAILS_ENV=test bundle exec rake db:schema:load test --trace
+  - RAILS_ENV=test bundle exec rake db:schema:load spec --trace
 before_script:
   - psql -c 'create database chartboost_test' -U postgres
 
