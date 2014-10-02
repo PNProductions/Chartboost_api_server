@@ -1,7 +1,16 @@
-<%# This is a slightly modified version of database.yml generated automatically
-<%# by Heroku for development and test environments. %>
-
 <%
+  # This is a slightly modified version of database.yml generated automatically
+  # by Heroku for development and test environments.
+%>
+
+<% if Rails.env.production? %>
+development:
+  adapter: postgresql
+  host: localhost
+  username: user
+  database: app-dev
+<%
+else
 
 require 'cgi'
 require 'uri'
@@ -68,3 +77,4 @@ end
 <% end %>
 
 <% end %> <%# end ".each do |environment|" %>
+<% end %>
