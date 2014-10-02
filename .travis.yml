@@ -1,3 +1,10 @@
 language: ruby
 rvm:
   - 2.1.2
+env:
+  - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake db:schema:load spec --trace
+before_script:
+  - psql -c 'create database chartboost_test' -U postgres
+
