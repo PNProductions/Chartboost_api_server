@@ -12,6 +12,8 @@ gem 'apipie-rails'
 
 gem 'jbuilder'
 gem 'rails_config'
+gem "time_diff"
+
 
 group :development, :test do
   gem 'rspec-rails'
