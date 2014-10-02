@@ -11,21 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930134311) do
+ActiveRecord::Schema.define(version: 20140926032946) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "chartboost_instances", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "from"
-    t.integer  "uuid"
-    t.text     "campaign"
-    t.integer  "macid"
-    t.text     "to"
-    t.integer  "ifa"
-    t.text     "my_type"
-    t.integer  "campaign_id"
+    t.text     "from",        null: false
+    t.string   "uuid",        null: false
+    t.string   "campaign_id", null: false
+    t.string   "campaign",    null: false
+    t.string   "macid",       null: false
+    t.string   "to",          null: false
+    t.string   "ifa",         null: false
+    t.string   "my_type",     null: false
   end
 
-  add_index "chartboost_instances", ["uuid"], name: "index_chartboost_instances_on_uuid", unique: true
+  add_index "chartboost_instances", ["uuid"], name: "index_chartboost_instances_on_uuid", unique: true, using: :btree
 
 end

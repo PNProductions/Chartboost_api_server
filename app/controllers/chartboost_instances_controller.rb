@@ -1,6 +1,6 @@
 class ChartboostInstancesController < ApplicationController
   def show
-    return render if exists_uuid_without_params_validation?
+    return render if exists_uuid?
     head :bad_request
   end
 
@@ -15,8 +15,12 @@ class ChartboostInstancesController < ApplicationController
   end
 
   def delete
-    return if exists_uuid_without_params_validation? && exists_uuid_without_params_validation?.destroy!
+    return if exists_uuid? && instance_by_uuid.destroy!
     head :bad_request
+  end
+
+  def ping
+    render text: 'hello_world'
   end
 
   private
@@ -27,12 +31,12 @@ class ChartboostInstancesController < ApplicationController
           :campaign_id, :macid, :to, :ifa, :my_type)
   end
 
-  def exists_uuid?
+  def instance_by_uuid
     @chartboost_instance ||= ChartboostInstance.find_by_uuid(chartboost_instance_params[:uuid])
   end
 
-  def exists_uuid_without_params_validation?
-    @chartboost_instance ||= ChartboostInstance.find_by_uuid(params[:uuid])
+  def exists_uuid?
+    !instance_by_uuid.nil?
   end
 
   def create_instance
