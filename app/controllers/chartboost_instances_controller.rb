@@ -4,17 +4,36 @@ class ChartboostInstancesController < ApplicationController
   end
 
   def create
-    @chartboost_instance = ChartboostInstance.create(chartboost_instance_params)
-    # Se fallisce il save significa che ho un id duplicato
-    render if @chartboost_instance.save
-    head :bad_request unless @chartboost_instance.update_attributes(uuid: @chartboost_instance.uuid)
+    if exists_uuid?
+      update_instance
+    elsif create_instance
+      head :created
+    else
+      head :bad_request
+    end
   end
 
   private
 
   def chartboost_instance_params
-    params.require(:chartboost_instance).permit(
+    @params ||= params.require(:chartboost_instance).permit(
           :from, :uuid, :campaign,
           :campaign_id, :macid, :to, :ifa, :my_type)
+  end
+
+  def exists_uuid?
+    @chartboost_instance ||= ChartboostInstance.find_by_uuid(chartboost_instance_params['uuid'])
+  end
+
+  def create_instance
+    ChartboostInstance.create(chartboost_instance_params).save
+  end
+
+  def update_instance
+    if @chartboost_instance.update_attributes(chartboost_instance_params)
+      head :no_content
+    else
+      head :unprocessable_entity
+    end
   end
 end

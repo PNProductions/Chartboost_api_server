@@ -20,8 +20,7 @@ RSpec.describe ChartboostInstancesController, type: :controller do
         expect do
           post :create, chartboost_instance: create_input_parameters('92846')
         end.to change(ChartboostInstance, :count).by(1)
-        expect(response).to have_http_status 200
-        expect(ChartboostInstance.last.macid).to eq(json['instance']['macid'])
+        expect(response).to have_http_status 201
       end
     end
 
@@ -30,14 +29,19 @@ RSpec.describe ChartboostInstancesController, type: :controller do
         expect do
           post :create, chartboost_instance: create_input_parameters
         end.to_not change(ChartboostInstance, :count)
+        expect(response).to have_http_status 204
+      end
+    end
+
+    describe 'with uuid not integer' do
+      it 'return a bad request header' do
+        expect do
+          post :create, chartboost_instance: create_input_parameters('ciao')
+        end.to_not change(ChartboostInstance, :count)
         expect(response).to have_http_status 400
       end
     end
 
-    describe 'with params missing' do
-      it 'return a bad request header' do
-      end
-    end
   end
 
   def create_input_parameters(uuid_duplicate = '11223344')
