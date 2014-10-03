@@ -37,4 +37,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'rspec_api_test'
   gem 'dotenv'
+  gem 'consistency_fail'
 end

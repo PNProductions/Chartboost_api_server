@@ -10,7 +10,7 @@ class ChartboostInstancesController < ApplicationController
     elsif create_instance
       head :created
     else
-      head :bad_request
+      render json: { errors: @chartboost_instance.errors }, status: :bad_request
     end
   end
 
@@ -20,7 +20,7 @@ class ChartboostInstancesController < ApplicationController
   end
 
   def ping
-    render text: 'hello_world'
+    render text: 'hello world'
   end
 
   private
@@ -34,7 +34,7 @@ class ChartboostInstancesController < ApplicationController
           :device_language, :device_type, :to_store_id,
           :from_store_id, :to_bundle_id, :side_of_event,
           :uuid, :campaign, :campaign_id, :macid, :ifa,
-          :campaign_type, :from_bundle_id, :target_name, :bid_type, :string,
+          :campaign_type, :from_bundle_id, :target_name, :bid_type,
           :currency_name, :award_amount)
   end
 
@@ -47,7 +47,8 @@ class ChartboostInstancesController < ApplicationController
   end
 
   def create_instance
-    ChartboostInstance.create(chartboost_instance_params).save
+    @chartboost_instance ||= ChartboostInstance.create(chartboost_instance_params)
+    @chartboost_instance.save
   end
 
   def update_instance
