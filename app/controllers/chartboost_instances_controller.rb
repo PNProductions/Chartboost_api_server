@@ -1,7 +1,8 @@
 class ChartboostInstancesController < ApplicationController
+  include ChartboostInstancesParameters
   def show
     return render if exists_uuid?
-    head :bad_request
+    head :not_found
   end
 
   def create
@@ -10,13 +11,13 @@ class ChartboostInstancesController < ApplicationController
     elsif create_instance
       head :created
     else
-      render json: { errors: @chartboost_instance.errors }, status: :bad_request
+      render_error
     end
   end
 
   def delete
-    return if exists_uuid? && instance_by_uuid.destroy!
-    head :bad_request
+    return if exists_uuid? && instance_by_uuid.destroy
+    instance_by_uuid ? render_error : head(:not_found)
   end
 
   def ping
@@ -26,16 +27,11 @@ class ChartboostInstancesController < ApplicationController
   private
 
   def chartboost_instance_params
-    @params ||= params.permit(
-          :user_id, :platform, :to_app_name, :to_app_id,
-          :to_company_name, :from_app_name, :from_app_id,
-          :from_company_name, :event_type, :gaid, :formatted_ifa,
-          :device_country_code, :device_model, :device_os,
-          :device_language, :device_type, :to_store_id,
-          :from_store_id, :to_bundle_id, :side_of_event,
-          :uuid, :campaign, :campaign_id, :macid, :ifa,
-          :campaign_type, :from_bundle_id, :target_name, :bid_type,
-          :currency_name, :award_amount)
+    @params ||= params.permit(*all_parameters)
+  end
+
+  def render_error
+    render json: { errors: @chartboost_instance.errors }, status: :unprocessable_entity
   end
 
   def instance_by_uuid

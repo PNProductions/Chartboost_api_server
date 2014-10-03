@@ -13,14 +13,14 @@ RSpec.describe ChartboostInstancesController, type: :controller do
     describe 'with existing uuid' do
       it 'return the uuid chartboost instance and the time passed' do
         get :show, uuid: 112_233_44
-        expect(response).to have_http_status 200
+        expect(response).to be_success
       end
     end
 
     describe 'with non existing uuid' do
       it 'return a bad request hader' do
         get :show, uuid: 7
-        expect(response).to have_http_status 400
+        expect(response).to have_http_status 404
       end
     end
   end
@@ -31,12 +31,23 @@ RSpec.describe ChartboostInstancesController, type: :controller do
         expect do
           get :delete, uuid: 11_223_344
         end.to change(ChartboostInstance, :count).by(-1)
+        expect(response).to be_success
       end
     end
     describe 'with non existing uuid' do
       it 'return a bad request hader' do
         get :delete, uuid: 7
-        expect(response).to have_http_status 400
+        expect(response).to have_http_status 404
+      end
+    end
+    describe 'with existing uuid and destroy failing' do
+      it 'return with a bad request' do
+        allow_any_instance_of(ChartboostInstance).to receive(:destroy).and_return(false)
+        get :delete, uuid: 112_233_44
+        expect do
+          get :delete, uuid: 11_223_344
+        end.to_not change(ChartboostInstance, :count)
+        expect(response).to have_http_status 422
       end
     end
   end
@@ -57,6 +68,16 @@ RSpec.describe ChartboostInstancesController, type: :controller do
           post :create, create_input_parameters
         end.to_not change(ChartboostInstance, :count)
         expect(response).to have_http_status 204
+      end
+    end
+
+    describe 'with non duplicate uuid and create failing' do
+      it 'return with a unprocessable entity' do
+        allow_any_instance_of(ChartboostInstance).to receive(:save).and_return(false)
+        expect do
+          post :create, create_input_parameters('92846')
+        end.to_not change(ChartboostInstance, :count)
+        expect(response).to have_http_status 422
       end
     end
   end
