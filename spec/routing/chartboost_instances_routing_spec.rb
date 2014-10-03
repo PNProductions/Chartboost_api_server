@@ -5,8 +5,9 @@ RSpec.describe ChartboostInstancesController, type: :routing do
     it 'routes to #show' do
       expect(get: '/show_ad').to route_to('chartboost_instances#show', format: 'json')
     end
+    
     it 'routes to #create' do
-      expect(post: '/chartboost_instances').to route_to('chartboost_instances#create', format: 'json')
+      expect(post: '/create_ad').to route_to('chartboost_instances#create', format: 'json')
     end
 
     it 'routes to #delete' do
