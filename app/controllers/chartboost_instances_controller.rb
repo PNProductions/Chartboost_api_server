@@ -27,8 +27,15 @@ class ChartboostInstancesController < ApplicationController
 
   def chartboost_instance_params
     @params ||= params.permit(
-          :from, :uuid, :campaign,
-          :campaign_id, :macid, :to, :ifa, :my_type)
+          :user_id, :platform, :to_app_name, :to_app_id,
+          :to_company_name, :from_app_name, :from_app_id,
+          :from_company_name, :event_type, :gaid, :formatted_ifa,
+          :device_country_code, :device_model, :device_os,
+          :device_language, :device_type, :to_store_id,
+          :from_store_id, :to_bundle_id, :side_of_event,
+          :uuid, :campaign, :campaign_id, :macid, :ifa,
+          :campaign_type, :from_bundle_id, :target_name, :bid_type, :string,
+          :currency_name, :award_amount)
   end
 
   def instance_by_uuid

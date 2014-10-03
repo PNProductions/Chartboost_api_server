@@ -59,28 +59,41 @@ RSpec.describe ChartboostInstancesController, type: :controller do
         expect(response).to have_http_status 204
       end
     end
-
-    describe 'with uuid not integer' do
-      it 'return a bad request header' do
-        expect do
-          post :create, create_input_parameters('ciao')
-        end.to_not change(ChartboostInstance, :count)
-        expect(response).to have_http_status 400
-      end
-    end
-
   end
 
   def create_input_parameters(uuid_duplicate = '11223344')
     {
-      from: 'app_from',
+      user_id: '10000',
+      platform: 'platform',
+      to_app_name: 'to_app_name',
+      to_app_id: '1111',
+      to_company_name: 'to_company_name',
+      from_app_name: 'from_app_name',
+      from_app_id: '2222',
+      from_company_name: 'from_company_name',
+      event_type: 'event_type',
+      gaid: 'gaid',
+      formatted_ifa: 'formatted_ifa',
+      device_country_code: 'device_country_code',
+      device_model: 'device_model',
+      device_os: 'device_os_',
+      device_language: 'device_language',
+      device_type: 'device_type',
+      to_store_id: '5555',
+      from_store_id: '6666',
+      to_bundle_id: '7777',
+      from_bundle_id: '8888',
+      side_of_event: 'side_of_event',
       uuid: uuid_duplicate,
-      campaign: 'campaign_created',
-      campaign_id: '44444444444',
-      macid: '666666666666',
-      to: 'test_adv_game',
-      ifa: '99999999999999',
-      my_type: 'click'
+      campaign: 'campaign',
+      campaign_id: '2222',
+      campaign_type: 'campaign_type',
+      macid: '3333',
+      ifa: '4444',
+      currency_name: 'currency_name',
+      award_amount: 'award_amount',
+      target_name: 'target_name',
+      bid_type: 'bid_type'
     }
   end
 end
