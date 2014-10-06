@@ -3,24 +3,19 @@
 Chartboost_api_server
 =====================
 
-Piccolo server API per la gestione delle callback inviate da chartboost.
+API server coded with Rails to manage **Chartboost [callbacks](https://answers.chartboost.com/hc/en-us/articles/201220115-Callbacks)**.
 
-##### Path1: GET uuid/get_info_last_ads_clicked
+It provides the followings routes:
+##### POST create_ad
 Fornisce all'utente informazioni sull'ultimo banner cliccato. Se non esite ritorna error
 
-##### Path2: GET uuid/delete
-Elimina il record presente sul db
+##### GET show_ad
 
-##### Path2: /chartboost/setup_clicked_ads
-Chartboost scrive su un url quando un utente installa un’app, lui fa un socket a questo url con le seguenti informazioni:
+##### GET delete_ad
 
-```ruby
-{"from" : "TestPublisherGame", "uuid" :"5555555555555555555555555555555555555555",
-"campaign" : "TestCampaign", "campaign_id" :
-"444444444444444444444444", "macid" :
-"7777777777777777777777777777777777777777", "to" :
-"TestAdvertiserGame", "ifa" :
-"66666666666666666666666666666666", "type" : "click" }
-```
+##### GET ping
 
-Il server deve salvare le informazioni date da chartboost in un model, associate anche ad un timestamp. Ho un’unica tabella, se l’id dell’utente è già presente nel model devo sostituirla, altrimenti creo un nuovo record
+It is fully integrated with **Travis** and **Heroku**.
+
+See the full documentation click here
+
